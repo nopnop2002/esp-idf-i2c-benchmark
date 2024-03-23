@@ -59,4 +59,4 @@ ESP32S2@240 gave the fastest results when the Legacy i2c driver.
 
 ESP32S2@240 gave the fastest results when the New i2c driver.   
 However, ESP32C6@160 is the next fastest.   
-![i2c-new](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/893fec52-f9cd-47aa-84a6-332b286e0b24)
+![i2c-new](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/92f3ad4b-a451-45b9-9772-9449f938689c)
