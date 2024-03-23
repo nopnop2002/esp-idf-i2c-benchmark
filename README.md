@@ -54,9 +54,9 @@ ESP32C6 gave the fastest results when the CPU frequency was 160MHz (120MHz or 96
 ESP32S2 gave the fastest results when the CPU frequency was 240MHz.   
 ![i2c-240Mhz](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/c97060c4-1414-4429-bfbc-e5b69c362982)
 
-ESP32S2 gave the fastest results when the Legacy i2c driver.   
+ESP32S2@240 gave the fastest results when the Legacy i2c driver.   
 ![i2c-legacy](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/833a7a10-35b8-4169-b9c6-91e5e99d9f38)
 
-ESP32S2 gave the fastest results when the New i2c driver.   
+ESP32S2@240 gave the fastest results when the New i2c driver.   
 However, ESP32C6@160 is the next fastest.   
 ![i2c-new](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/893fec52-f9cd-47aa-84a6-332b286e0b24)
