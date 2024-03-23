@@ -9,8 +9,8 @@ Thank you UncleRus.
 
 
 # Software requirements
-ESP-IDF V5.2 or later.   
-
+ESP-IDF V5.2.   
+This version can use both Legacy and New drivers.   
 
 # Hardware requirements
 MCP23017 16-Bit I/O Expander with i2c Interface.   
