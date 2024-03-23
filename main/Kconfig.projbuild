@@ -1,0 +1,87 @@
+menu "I2C Configuration"
+
+	config GPIO_RANGE_MAX
+		int
+		default 33 if IDF_TARGET_ESP32
+		default 46 if IDF_TARGET_ESP32S2
+		default 48 if IDF_TARGET_ESP32S3
+		default 18 if IDF_TARGET_ESP32C2
+		default 19 if IDF_TARGET_ESP32C3
+		default 30 if IDF_TARGET_ESP32C6
+		default 27 if IDF_TARGET_ESP32H2
+
+	choice DRIVER
+		prompt "Driver Type"
+		default LEGACY_DRIVER
+		help
+			Select i2c driver Type.
+		config LEGACY_DRIVER
+			bool "Use Legacy driver"
+			help
+				Use Legacy driver.
+		config NEW_DRIVER
+			bool "Use New driver"
+			help
+				Use New driver.
+	endchoice
+
+	config I2C_SCL_GPIO
+		int "SCL GPIO number"
+		range 0 GPIO_RANGE_MAX
+		default 22 if IDF_TARGET_ESP32
+		default  2 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  2 if IDF_TARGET_ESP32H2
+		default  6 # C3 and others
+		help
+			GPIO number (IOxx) to I2C SCL.
+			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to I2C.
+			GPIOs 35-39 are input-only so cannot be used as outputs.
+
+	config I2C_SDA_GPIO
+		int "SDA GPIO number"
+		range 0 GPIO_RANGE_MAX
+		default 21 if IDF_TARGET_ESP32
+		default  1 if IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+		default  1 if IDF_TARGET_ESP32H2
+		default  5 # C3 and others
+		help
+			GPIO number (IOxx) to I2C SDA.
+			Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to I2C.
+			GPIOs 35-39 are input-only so cannot be used as outputs.
+
+	choice I2C_PORT
+		prompt "I2C port that controls this bus"
+		default I2C_PORT_0
+		help
+			Select I2C port that controls this bus.
+		config I2C_PORT_0
+			bool "I2C_PORT_0"
+			help
+				Use I2C_PORT_0.
+		config I2C_PORT_1
+			depends on IDF_TARGET_ESP32 || IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+			bool "I2C_PORT_1"
+			help
+				Use I2C_PORT_1.
+	endchoice
+
+	config I2C_ADDR
+		hex "I2C address of mcp23017"
+		default 0x20
+		help
+			I2C address of `mcp23017`. `mcp23017` has three address pins (`A0`,
+			`A1`, and `A2`). The address starts from `0x20` (all pins are
+			grounded), which is the default, and ends at `0x27`. See "3.3.1
+			ADDRESSING I2C DEVICES (MCP23017)" in the datasheet.
+
+	config I2C_CLOCK_SPEED
+		int "I2C clock speed[Hz]"
+		default  600000 if IDF_TARGET_ESP32C2
+		default  900000 if IDF_TARGET_ESP32C3
+		default  800000 if IDF_TARGET_ESP32H2
+		default 1000000
+		help
+			I2C clock speed.
+
+endmenu
+
