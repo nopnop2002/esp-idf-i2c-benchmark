@@ -55,8 +55,8 @@ typedef struct
 	int sda_io_num;                     //!< GPIO of SDA
 	int scl_io_num;                     //!< GPIO of SCL
     i2c_port_t port;                    //!< I2C port number
-    uint8_t addr;                       //!< I2C device address
-    uint32_t clk_speed;                 //!< I2C clock frequency
+	uint8_t addr;                       //!< I2C device address
+	uint32_t clk_speed;                 //!< I2C clock frequency
 } i2c_dev_t;
 
 /**
