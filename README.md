@@ -65,4 +65,4 @@ There are only a few differences between ESP32S2@240(3830) and ESP32C6@160(3850)
 
 __Note:__   
 Please note that this benchmark is a result of maximum i2c clock frequency.   
-If the i2c clock frequency is low, this result may differ.   
+This result may be different if the i2c clock frequency is lower.   
