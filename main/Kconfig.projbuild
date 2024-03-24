@@ -59,7 +59,7 @@ menu "I2C Configuration"
 			help
 				Use I2C_PORT_0.
 		config I2C_PORT_1
-			depends on IDF_TARGET_ESP32 || IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3
+			depends on IDF_TARGET_ARCH_XTENSA
 			bool "I2C_PORT_1"
 			help
 				Use I2C_PORT_1.
