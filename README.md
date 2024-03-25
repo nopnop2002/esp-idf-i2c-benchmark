@@ -32,7 +32,7 @@ idf.py flash
 ```
 
 # Benchmark with Og compile option
-The maximum I2C Clock frequency for the ESP32 i2c driver is 1.0MHz, but the ESP32C2, C3, and H3 do not work properly at 1MHz.   
+The maximum I2C Clock frequency for the ESP32 i2c driver is 1.0MHz, but the ESP32C2, C3, and H2 do not work properly at 1MHz.   
 For any SoCs, the New Driver achieved faster results than the Legacy Driver.   
 
 |SoC@CPU Freq|i2c Clock Freq[MHz]|Legacy Driver[MillSec]|New Driver[MillSec]||
