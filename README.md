@@ -62,6 +62,36 @@ However, ESP32C6@160 is the next fastest.
 There are only a few differences between ESP32S2@240(3830) and ESP32C6@160(3850).   
 ![i2c-new](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/92f3ad4b-a451-45b9-9772-9449f938689c)
 
+# Flash size comparison   
+- Legacy driver
+```
+Total sizes:
+Used static DRAM:   11040 bytes ( 169696 remain, 6.1% used)
+      .data size:    8808 bytes
+      .bss  size:    2232 bytes
+Used static IRAM:   56426 bytes (  74646 remain, 43.0% used)
+      .text size:   55399 bytes
+   .vectors size:    1027 bytes
+Used Flash size :  130971 bytes
+           .text:   87651 bytes
+         .rodata:   43064 bytes
+Total image size:  196205 bytes (.bin may be padded larger)
+```
+
+- New driver
+```
+Total sizes:
+Used static DRAM:   11000 bytes ( 169736 remain, 6.1% used)
+      .data size:    8760 bytes
+      .bss  size:    2240 bytes
+Used static IRAM:   52362 bytes (  78710 remain, 39.9% used)
+      .text size:   51335 bytes
+   .vectors size:    1027 bytes
+Used Flash size :  135771 bytes
+           .text:   92471 bytes
+         .rodata:   43044 bytes
+Total image size:  196893 bytes (.bin may be padded larger)
+```
 
 __Note:__   
 Please note that this benchmark is a result of maximum i2c clock frequency.   
