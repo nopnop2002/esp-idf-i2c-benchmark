@@ -63,7 +63,7 @@ There are only a few differences between ESP32S2@240(3830) and ESP32C6@160(3850)
 ![i2c-new](https://github.com/nopnop2002/esp-idf-i2c-benchmark/assets/6020549/92f3ad4b-a451-45b9-9772-9449f938689c)
 
 # Flash size comparison   
-- Legacy driver
+Legacy driver
 ```
 Total sizes:
 Used static DRAM:   11040 bytes ( 169696 remain, 6.1% used)
@@ -78,7 +78,7 @@ Used Flash size :  130971 bytes
 Total image size:  196205 bytes (.bin may be padded larger)
 ```
 
-- New driver
+New driver
 ```
 Total sizes:
 Used static DRAM:   11000 bytes ( 169736 remain, 6.1% used)
