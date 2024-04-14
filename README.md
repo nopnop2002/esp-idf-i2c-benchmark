@@ -65,6 +65,8 @@ There are only a few differences between ESP32S2@240(3830) and ESP32C6@160(3850)
 # Flash size comparison   
 Legacy driver
 ```
+$ idf.py size
+
 Total sizes:
 Used static DRAM:   11040 bytes ( 169696 remain, 6.1% used)
       .data size:    8808 bytes
@@ -80,6 +82,8 @@ Total image size:  196205 bytes (.bin may be padded larger)
 
 New driver
 ```
+$ idf.py size
+
 Total sizes:
 Used static DRAM:   11000 bytes ( 169736 remain, 6.1% used)
       .data size:    8760 bytes
